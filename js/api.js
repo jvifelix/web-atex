@@ -2,14 +2,14 @@
 
 export function fazGet(){
     let request = new XMLHttpRequest();
-    request.open("GET", "https://54.207.193.173:8443/apinews/lista", false);
+    request.open("GET", "http://54.207.193.173:8080/apinews/lista", false);
     request.send();
     return request.responseText;
 }
 
 function fazPesquisa(text){
     let request = new XMLHttpRequest();
-    request.open("GET", "https://54.207.193.173:8443/apinews/pesquisar/" + text, false);
+    request.open("GET", "http://54.207.193.173:8080/apinews/pesquisar/" + text, false);
     request.send();
     return request.responseText;
 }
@@ -81,7 +81,7 @@ export function removeLinhas(){
 }
 
 export function fazAvaliacao(nome, classificacao, comentario, data){
-    fetch("https://54.207.193.173:8443/apisms/insert", {
+    fetch("http://54.207.193.173:8080/apisms/insert", {
         headers:{
             "Accpet": "application/json",
             "Content-Type": "application/json"
